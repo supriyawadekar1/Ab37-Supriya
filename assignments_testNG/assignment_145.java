@@ -1,6 +1,5 @@
-package testng_assignments;
+package assignments_testNG;
 
-import java.time.Duration;
 import java.util.Iterator;
 import java.util.Set;
 
@@ -9,10 +8,11 @@ import org.openqa.selenium.WebElement;
 import org.openqa.selenium.interactions.Actions;
 import org.testng.annotations.Test;
 
-public class assignment_147 extends Launch_Close
+public class assignment_145 extends Launch_Close
 {
+
 	@Test
-	public void Login_search_pen_cart_logout() throws InterruptedException
+	public void Login_search_pen_logout() throws InterruptedException
 	{
 		WebElement sign_in=driver.findElement(By.id("nav-link-accountList-nav-line-1"));
 		
@@ -34,14 +34,12 @@ public class assignment_147 extends Launch_Close
 		search_button.click();
 		WebElement pen=driver.findElement(By.xpath("(//div[@class='a-section aok-relative s-image-square-aspect'])[4]"));
 		pen.click();
-		
-		Set<String> selected_shoe=driver.getWindowHandles();
-		Iterator<String> pid=selected_shoe.iterator();
-		String pid1=pid.next();
-		String cid=pid.next();
-		driver.switchTo().window(cid);
-		WebElement add_cart=driver.findElement(By.id("add-to-cart-button"));
-		add_cart.click();
-		
+		Thread.sleep(3000);
+		Set<String> selected_pen=driver.getWindowHandles();
+		Iterator<String> pid=selected_pen.iterator();
+		String parentid=pid.next();
+		String childid=pid.next();
+		driver.switchTo().window(childid);
 	}
 }
+

@@ -1,4 +1,4 @@
-package assignments;
+package assignments_testNG;
 
 import org.testng.annotations.Test;
 

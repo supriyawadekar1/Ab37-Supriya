@@ -1,4 +1,4 @@
-package testng_assignments;
+package assignments_testNG;
 
 import org.testng.annotations.DataProvider;
 import org.testng.annotations.Test;

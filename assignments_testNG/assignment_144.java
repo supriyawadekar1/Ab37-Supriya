@@ -1,4 +1,4 @@
-package testng_assignments;
+package assignments_testNG;
 import java.time.Duration;
 import java.util.Iterator;
 import java.util.Set;

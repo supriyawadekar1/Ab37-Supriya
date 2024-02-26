@@ -1,4 +1,4 @@
-package testng_assignments;
+package assignments_testNG;
 
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebElement;
