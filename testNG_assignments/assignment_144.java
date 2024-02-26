@@ -1,18 +1,18 @@
-package Amazon_scenarios;
-
+package testng_assignments;
 import java.time.Duration;
 import java.util.Iterator;
 import java.util.Set;
 
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebElement;
+import org.openqa.selenium.edge.EdgeDriver;
 import org.openqa.selenium.interactions.Actions;
 import org.testng.annotations.Test;
 
-public class test_case4 extends Launch_Close
+public class assignment_144 extends Launch_Close
 {
 	@Test
-	public void Login_search_pen_cart_logout() throws InterruptedException
+	public void Login_search_logout() throws InterruptedException
 	{
 		WebElement sign_in=driver.findElement(By.id("nav-link-accountList-nav-line-1"));
 		
@@ -30,18 +30,17 @@ public class test_case4 extends Launch_Close
 		sign_in2.click();
 		WebElement search_box=driver.findElement(By.id("twotabsearchtextbox"));
 		WebElement search_button=driver.findElement(By.id("nav-search-submit-button"));
-		search_box.sendKeys("pen");
+		search_box.sendKeys("shoes");
 		search_button.click();
-		WebElement pen=driver.findElement(By.xpath("(//div[@class='a-section aok-relative s-image-square-aspect'])[4]"));
-		pen.click();
+		WebElement shoes=driver.findElement(By.xpath("(//div[@class='a-section a-spacing-base a-text-center'])[4]"));
+		shoes.click();
+		Thread.sleep(5000);
 		
-		Set<String> selected_shoe=driver.getWindowHandles();
-		Iterator<String> pid=selected_shoe.iterator();
-		String pid1=pid.next();
-		String cid=pid.next();
-		driver.switchTo().window(cid);
-		WebElement add_cart=driver.findElement(By.id("add-to-cart-button"));
-		add_cart.click();
-		
+		Set<String> selected_pen=driver.getWindowHandles();
+		Iterator<String> pid=selected_pen.iterator();
+		String parentid=pid.next();
+		String childid=pid.next();
+		driver.switchTo().window(childid);
 	}
+	
 }

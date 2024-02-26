@@ -1,18 +1,15 @@
-package Amazon_scenarios;
-import java.time.Duration;
-import java.util.Iterator;
-import java.util.Set;
+package testng_assignments;
 
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebElement;
-import org.openqa.selenium.edge.EdgeDriver;
 import org.openqa.selenium.interactions.Actions;
+import org.openqa.selenium.support.ui.Select;
 import org.testng.annotations.Test;
 
-public class test_case1 extends Launch_Close
+public class assignment_148 extends Launch_Close 
 {
 	@Test
-	public void Login_search_logout() throws InterruptedException
+	public void Login_search_logout()
 	{
 		WebElement sign_in=driver.findElement(By.id("nav-link-accountList-nav-line-1"));
 		
@@ -28,19 +25,10 @@ public class test_case1 extends Launch_Close
 		                                                                                          pass.sendKeys("amazonin@123");
 		WebElement sign_in2=driver.findElement(By.id("signInSubmit"));
 		sign_in2.click();
-		WebElement search_box=driver.findElement(By.id("twotabsearchtextbox"));
-		WebElement search_button=driver.findElement(By.id("nav-search-submit-button"));
-		search_box.sendKeys("shoes");
-		search_button.click();
-		WebElement shoes=driver.findElement(By.xpath("(//div[@class='a-section a-spacing-base a-text-center'])[4]"));
-		shoes.click();
-		Thread.sleep(5000);
-		
-		Set<String> selected_pen=driver.getWindowHandles();
-		Iterator<String> pid=selected_pen.iterator();
-		String parentid=pid.next();
-		String childid=pid.next();
-		driver.switchTo().window(childid);
+		WebElement dd=driver.findElement(By.id("searchDropdownBox"));
+		Select s1=new Select(dd);
+		s1.selectByVisibleText("Books");
+		driver.findElement(By.xpath("(//input[@id='twotabsearchtextbox'])[1]")).sendKeys("Software");
+		driver.findElement(By.xpath("//input[@value='Go']")).click();
 	}
-	
 }

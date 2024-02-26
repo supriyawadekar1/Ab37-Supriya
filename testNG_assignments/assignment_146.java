@@ -1,4 +1,4 @@
-package Amazon_scenarios;
+package testng_assignments;
 
 import java.util.Iterator;
 import java.util.Set;
@@ -8,7 +8,7 @@ import org.openqa.selenium.WebElement;
 import org.openqa.selenium.interactions.Actions;
 import org.testng.annotations.Test;
 
-public class test_case3 extends Launch_Close
+public class assignment_146 extends Launch_Close
 {
 	@Test
 	public void Login_search_pen_wishlist_logout() throws InterruptedException
